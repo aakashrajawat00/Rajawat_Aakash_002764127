@@ -292,12 +292,11 @@ public class viewJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         
         for(employeeData ed: history.getHistory()){
-           Object[] row = new Object[8];
+           Object[] row = new Object[9];
            row[0] = ed.getName();
            row[1] = ed.getEmployeeId();
            row[2]= ed.getAge();
            row[3] = ed.getGender();
-           //row[4] = ed.getCurrentDate();
            row[4] = ed.getLevel();
            row[5] = ed.getTeamInfo();
            row[6] = ed.getPostionTitle();
