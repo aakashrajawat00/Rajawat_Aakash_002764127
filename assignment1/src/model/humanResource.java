@@ -4,103 +4,31 @@
  */
 package model;
 
-import java.util.Date;
+import java.util.ArrayList;
 
 /**
  *
  * @author aakashrajawat
  */
 public class humanResource {
-    private String name;
-    private int employeeId;
-    private int age;
-    private String Gender;
-    private String Level;
-    private String teamInfo;
-    private String postionTitle;
-    private String email;
-    private int phonenumber;
-    private Date currentDate;
+    private ArrayList<employeeData> history;
+        
+        public humanResource(){
+            this.history = new ArrayList<employeeData>();
+            
+        }
 
-    public String getName() {
-        return name;
+    public ArrayList<employeeData> getHistory() {
+        return history;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setHistory(ArrayList<employeeData> history) {
+        this.history = history;
     }
-
-    public int getEmployeeId() {
-        return employeeId;
-    }
-
-    public void setEmployeeId(int employeeId) {
-        this.employeeId = employeeId;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getGender() {
-        return Gender;
-    }
-
-    public void setGender(String Gender) {
-        this.Gender = Gender;
-    }
-
-    public String getLevel() {
-        return Level;
-    }
-
-    public void setLevel(String Level) {
-        this.Level = Level;
-    }
-
-    public String getTeamInfo() {
-        return teamInfo;
-    }
-
-    public void setTeamInfo(String teamInfo) {
-        this.teamInfo = teamInfo;
-    }
-
-    public String getPostionTitle() {
-        return postionTitle;
-    }
-
-    public void setPostionTitle(String postionTitle) {
-        this.postionTitle = postionTitle;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public int getPhonenumber() {
-        return phonenumber;
-    }
-
-    public void setPhonenumber(int phonenumber) {
-        this.phonenumber = phonenumber;
-    }
-
-    public Date getCurrentDate() {
-        return currentDate;
-    }
-
-    public void setCurrentDate(Date currentDate) {
-        this.currentDate = currentDate;
-    }
-    
-    
+        
+    public employeeData addNew(){
+        employeeData newData = new employeeData();
+        history.add(newData);
+        return newData;
+    }        
 }
