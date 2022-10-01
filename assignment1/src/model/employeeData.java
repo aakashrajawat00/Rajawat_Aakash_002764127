@@ -100,5 +100,8 @@ public class employeeData {
         this.currentDate = currentDate;
     }
     
-    
+    @Override
+    public String toString(){
+        return name;
+    }
 }

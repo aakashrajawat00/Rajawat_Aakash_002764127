@@ -221,6 +221,7 @@ public class createJPanel extends javax.swing.JPanel {
         ed.setName(name);
         ed.setEmployeeId(employeeId);
         ed.setAge(age);
+        ed.setGender(Gender);
         ed.setLevel(Level);
         ed.setTeamInfo(teamInfo);
         ed.setPostionTitle(postionTitle);
