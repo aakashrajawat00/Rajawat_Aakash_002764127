@@ -226,7 +226,7 @@ public class createJPanel extends javax.swing.JPanel {
         String teamInfo= txtTeaminfo.getText();
         String postionTitle=txtPosition.getText();
         String email= txtEmail.getText();
-        int phonenumber = Integer.parseInt(txtPhonenumber.getText());
+        String phonenumber = txtPhonenumber.getText();
         SimpleDateFormat d = new SimpleDateFormat("MM-dd-yyyy");
         String startDate= d.format(DC.getDate());
         

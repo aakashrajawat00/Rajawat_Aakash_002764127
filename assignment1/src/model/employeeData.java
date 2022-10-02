@@ -18,7 +18,7 @@ public class employeeData {
     private String teamInfo;
     private String postionTitle;
     private String email;
-    private int phonenumber;
+    private String phonenumber;
     //private String currentDate;
 
     public String getStartDate() {
@@ -93,21 +93,16 @@ public class employeeData {
         this.email = email;
     }
 
-    public int getPhonenumber() {
+    public String getPhonenumber() {
         return phonenumber;
     }
 
-    public void setPhonenumber(int phonenumber) {
+    public void setPhonenumber(String phonenumber) {
         this.phonenumber = phonenumber;
     }
 
-//    public String getCurrentDate() {
-//        return currentDate;
-//    }
-//
-//    public void setCurrentDate(String currentDate) {
-//        this.currentDate = currentDate;
-   // }
+    
+
     
     @Override
     public String toString(){
