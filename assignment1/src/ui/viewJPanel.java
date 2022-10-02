@@ -61,6 +61,7 @@ public class viewJPanel extends javax.swing.JPanel {
         btndelete = new javax.swing.JButton();
         lblStartDate = new javax.swing.JLabel();
         txtStartDate = new javax.swing.JTextField();
+        btnUpdate = new javax.swing.JButton();
 
         txtPosition.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,6 +140,13 @@ public class viewJPanel extends javax.swing.JPanel {
 
         lblStartDate.setText("Start Date");
 
+        btnUpdate.setText("Update");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -180,7 +188,9 @@ public class viewJPanel extends javax.swing.JPanel {
                             .addComponent(lblEmployeeId)
                             .addComponent(lblName))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btndelete, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btndelete, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))))
                 .addGap(242, 242, 242))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -210,9 +220,11 @@ public class viewJPanel extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(276, Short.MAX_VALUE)
                 .addComponent(lblName)
-                .addGap(21, 21, 21)
-                .addComponent(lblEmployeeId)
-                .addGap(30, 30, 30)
+                .addGap(16, 16, 16)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblEmployeeId)
+                    .addComponent(btnUpdate))
+                .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAge)
                     .addComponent(btndelete))
@@ -334,8 +346,31 @@ public class viewJPanel extends javax.swing.JPanel {
         
     }//GEN-LAST:event_btndeleteActionPerformed
 
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        // TODO add your handling code here:
+        int i = viewTable.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) viewTable.getModel();
+        
+        if(i>=0){
+            model.setValueAt(txtName.getText(), i, 0);
+            model.setValueAt(txtId.getText(), i, 1);
+            model.setValueAt(txtAge.getText(), i, 2);
+            model.setValueAt(txtGender.getText(), i, 3);
+            model.setValueAt(txtLevel.getText(), i, 4);
+            model.setValueAt(txtTeaminfo.getText(), i, 5);
+            model.setValueAt(txtPosition.getText(), i, 6);
+            model.setValueAt(txtPhonenumber.getText(), i, 7);
+            model.setValueAt(txtEmail.getText(), i, 8);
+            model.setValueAt(txtStartDate.getText(), i, 9);
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"Error");
+        }
+    }//GEN-LAST:event_btnUpdateActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnUpdate;
     private javax.swing.JButton btnView;
     private javax.swing.JButton btndelete;
     private javax.swing.JScrollPane jScrollPane1;
