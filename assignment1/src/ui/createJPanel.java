@@ -4,6 +4,7 @@
  */
 package ui;
 
+import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import model.employeeData;
 import model.humanResource;
@@ -53,6 +54,8 @@ public class createJPanel extends javax.swing.JPanel {
         lblPhonenumber = new javax.swing.JLabel();
         lblGender = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
+        lblStartDate = new javax.swing.JLabel();
+        DC = new com.toedter.calendar.JDateChooser();
 
         lblEmail.setText("Email Address");
 
@@ -107,6 +110,8 @@ public class createJPanel extends javax.swing.JPanel {
 
         lblGender.setText("Gender");
 
+        lblStartDate.setText("Start Date");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -115,14 +120,17 @@ public class createJPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(166, 166, 166)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblPosition)
                             .addComponent(lblTeaminfo)
                             .addComponent(lblPhonenumber)
-                            .addComponent(lblEmail)))
+                            .addComponent(lblEmail)
+                            .addComponent(lblStartDate))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(DC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(177, 177, 177)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -144,12 +152,12 @@ public class createJPanel extends javax.swing.JPanel {
                             .addComponent(txtEmail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(72, 212, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(269, 269, 269)
+                .addGap(271, 271, 271)
                 .addComponent(btnAdd)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtAge, txtEmail, txtGender, txtId, txtLevel, txtName, txtPhonenumber, txtPosition, txtTeaminfo});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {DC, txtAge, txtEmail, txtGender, txtId, txtLevel, txtName, txtPhonenumber, txtPosition, txtTeaminfo});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -195,12 +203,16 @@ public class createJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblEmail)
                     .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblStartDate)
+                    .addComponent(DC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addComponent(btnAdd)
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addGap(53, 53, 53))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtAge, txtEmail, txtGender, txtId, txtLevel, txtName, txtPhonenumber, txtPosition, txtTeaminfo});
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {DC, txtAge, txtEmail, txtGender, txtId, txtLevel, txtName, txtPhonenumber, txtPosition, txtTeaminfo});
 
     }// </editor-fold>//GEN-END:initComponents
 
@@ -215,8 +227,9 @@ public class createJPanel extends javax.swing.JPanel {
         String postionTitle=txtPosition.getText();
         String email= txtEmail.getText();
         int phonenumber = Integer.parseInt(txtPhonenumber.getText());
-        //String currentDate = txtDate.getText();
-
+        SimpleDateFormat d = new SimpleDateFormat("MM-dd-yyyy");
+        String startDate= d.format(DC.getDate());
+        
         employeeData ed = history.addNew();
         ed.setName(name);
         ed.setEmployeeId(employeeId);
@@ -227,13 +240,13 @@ public class createJPanel extends javax.swing.JPanel {
         ed.setPostionTitle(postionTitle);
         ed.setEmail(email);
         ed.setPhonenumber(phonenumber);
-        //ed.setCurrentDate(currentDate);
+        ed.setStartDate(startDate);
+        
 
         JOptionPane.showMessageDialog(this,"Employee Added");
 
         txtName.setText("");
         txtAge.setText("");
-        //txtDate.setText("");
         txtEmail.setText("");
         txtGender.setText("");
         txtId.setText("");
@@ -241,7 +254,7 @@ public class createJPanel extends javax.swing.JPanel {
         txtPhonenumber.setText("");
         txtPosition.setText("");
         txtTeaminfo.setText("");
-        //txtDate.setText("");
+        DC.setDate(null);
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void txtPositionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPositionActionPerformed
@@ -262,6 +275,7 @@ public class createJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.toedter.calendar.JDateChooser DC;
     private javax.swing.JButton btnAdd;
     private javax.swing.JLabel lblAge;
     private javax.swing.JLabel lblEmail;
@@ -271,6 +285,7 @@ public class createJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblPhonenumber;
     private javax.swing.JLabel lblPosition;
+    private javax.swing.JLabel lblStartDate;
     private javax.swing.JLabel lblTeaminfo;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JTextField txtAge;

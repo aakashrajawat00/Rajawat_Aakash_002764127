@@ -13,12 +13,21 @@ public class employeeData {
     private int employeeId;
     private int age;
     private String Gender;
+    private String startDate;
     private String Level;
     private String teamInfo;
     private String postionTitle;
     private String email;
     private int phonenumber;
-    private String currentDate;
+    //private String currentDate;
+
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
 
     public String getName() {
         return name;
@@ -92,13 +101,13 @@ public class employeeData {
         this.phonenumber = phonenumber;
     }
 
-    public String getCurrentDate() {
-        return currentDate;
-    }
-
-    public void setCurrentDate(String currentDate) {
-        this.currentDate = currentDate;
-    }
+//    public String getCurrentDate() {
+//        return currentDate;
+//    }
+//
+//    public void setCurrentDate(String currentDate) {
+//        this.currentDate = currentDate;
+   // }
     
     @Override
     public String toString(){
