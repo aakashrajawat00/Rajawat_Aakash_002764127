@@ -59,6 +59,11 @@ public class mainJFrame extends javax.swing.JFrame {
         btnDelete.setText("Delete");
 
         btnSearch.setText("Search");
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout controlLayout = new javax.swing.GroupLayout(control);
         control.setLayout(controlLayout);
@@ -133,6 +138,10 @@ public class mainJFrame extends javax.swing.JFrame {
         viewJPanel panel = new viewJPanel(history);
         splitPane.setRightComponent(panel);
     }//GEN-LAST:event_btnViewActionPerformed
+
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSearchActionPerformed
 
     /**
      * @param args the command line arguments

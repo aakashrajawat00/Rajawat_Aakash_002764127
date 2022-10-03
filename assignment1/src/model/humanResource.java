@@ -1,17 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package model;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author aakashrajawat
- */
 public class humanResource {
-        private ArrayList<employeeData> history;
+    private ArrayList<employeeData> history;
         
         public humanResource(){
             this.history = new ArrayList<employeeData>();
@@ -30,5 +23,9 @@ public class humanResource {
         employeeData newData = new employeeData();
         history.add(newData);
         return newData;
-    }    
+    }        
+
+    public void deleteColumns(employeeData ed) {
+        history.remove(ed);
+    }
 }
