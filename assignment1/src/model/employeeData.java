@@ -4,6 +4,8 @@
  */
 package model;
 
+import java.util.Date;
+
 /**
  *
  * @author aakashrajawat
@@ -13,21 +15,20 @@ public class employeeData {
     private int employeeId;
     private int age;
     private String Gender;
-    private String startDate;
     private String Level;
     private String teamInfo;
     private String postionTitle;
     private String email;
-    private String phonenumber;
-    //private String currentDate;
-
-    public String getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(String startDate) {
-        this.startDate = startDate;
-    }
+    private int phonenumber;
+//    private String currentDate;
+//
+//    public String getCurrentDate() {
+//        return currentDate;
+//    }
+//
+//    public void setCurrentDate(String currentDate) {
+//        this.currentDate = currentDate;
+//    }
 
     public String getName() {
         return name;
@@ -93,19 +94,15 @@ public class employeeData {
         this.email = email;
     }
 
-    public String getPhonenumber() {
+    public int getPhonenumber() {
         return phonenumber;
     }
 
-    public void setPhonenumber(String phonenumber) {
+    public void setPhonenumber(int phonenumber) {
         this.phonenumber = phonenumber;
     }
 
     
-
     
-    @Override
-    public String toString(){
-        return name;
-    }
+    
 }
