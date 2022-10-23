@@ -82,5 +82,9 @@ public class Person {
         this.hasVitalSigns = hasVitalSigns;
     }
     
-    
+    @Override
+    public String toString()
+    {
+        return this.personName;
+    }
 }
