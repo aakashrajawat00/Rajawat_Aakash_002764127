@@ -60,9 +60,13 @@ public class enterdataPerson extends javax.swing.JPanel {
         cityjLabel = new javax.swing.JLabel();
         personCityJTextField = new javax.swing.JTextField();
         personCommunityJTextField = new javax.swing.JLabel();
-        personCommunityjComboBox = new javax.swing.JComboBox<>();
         backJButton = new javax.swing.JButton();
         addPersonJButton = new javax.swing.JButton();
+        txtLocality = new javax.swing.JComboBox<>();
+        txtHospital = new javax.swing.JComboBox<>();
+        txtDoctor = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -89,13 +93,6 @@ public class enterdataPerson extends javax.swing.JPanel {
 
         personCommunityJTextField.setText("Community:");
 
-        personCommunityjComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Roxbury", "Fenway", "Downtown", "Kenmore" }));
-        personCommunityjComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                personCommunityjComboBoxActionPerformed(evt);
-            }
-        });
-
         backJButton.setText("Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,6 +107,19 @@ public class enterdataPerson extends javax.swing.JPanel {
             }
         });
 
+        txtLocality.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Roxbury", "Bolyston Street", "Westland" }));
+        txtLocality.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtLocalityActionPerformed(evt);
+            }
+        });
+
+        txtDoctor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dentist", "Neurologists", "Pediatricians", "Gynecologists" }));
+
+        jLabel2.setText("jLabel2");
+
+        jLabel3.setText("jLabel3");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -120,27 +130,38 @@ public class enterdataPerson extends javax.swing.JPanel {
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(123, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(AgeJLabel)
-                    .addComponent(patientNameJLabel)
-                    .addComponent(weightjLabel)
-                    .addComponent(addressjLabel)
-                    .addComponent(cityjLabel)
-                    .addComponent(personCommunityJTextField))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(backJButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AgeJLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(patientNameJLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(weightjLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(addressjLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cityjLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(personCommunityJTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(personAgeJTextField)
-                            .addComponent(pesonNameJTextField)
-                            .addComponent(personWeightJTextField)
-                            .addComponent(personAddressJTextField)
-                            .addComponent(personCityJTextField)
-                            .addComponent(personCommunityjComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(93, 93, 93)
-                        .addComponent(addPersonJButton)))
+                        .addComponent(addPersonJButton))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGap(24, 24, 24)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(personCityJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
+                                .addComponent(pesonNameJTextField)
+                                .addComponent(personAgeJTextField)
+                                .addComponent(personWeightJTextField)
+                                .addComponent(personAddressJTextField)))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGap(18, 18, 18)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtHospital, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtLocality, 0, 173, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(txtDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(159, 159, 159))
         );
         layout.setVerticalGroup(
@@ -169,24 +190,28 @@ public class enterdataPerson extends javax.swing.JPanel {
                     .addComponent(cityjLabel)
                     .addComponent(personCityJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(personCommunityJTextField)
-                    .addComponent(personCommunityjComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(49, 49, 49)
+                    .addComponent(txtLocality, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtHospital, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backJButton)
                     .addComponent(addPersonJButton))
-                .addGap(363, 363, 363))
+                .addGap(317, 317, 317))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void personWeightJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_personWeightJTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_personWeightJTextFieldActionPerformed
-
-    private void personCommunityjComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_personCommunityjComboBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_personCommunityjComboBoxActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
         // TODO add your handling code here:
@@ -224,7 +249,7 @@ public class enterdataPerson extends javax.swing.JPanel {
             person.setPersonName(pesonNameJTextField.getText());
             person.setAge(Integer.parseInt(personAgeJTextField.getText()));
             person.setWeight(Integer.parseInt(personWeightJTextField.getText()));
-            person.setCommunity((String)personCommunityjComboBox.getSelectedItem());
+            person.setCommunity((String)txtLocality.getSelectedItem());
             person.setCity(personCityJTextField.getText());
             person.setAddress(personAddressJTextField.getText());
 
@@ -238,6 +263,37 @@ public class enterdataPerson extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_addPersonJButtonActionPerformed
 
+    private void txtLocalityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLocalityActionPerformed
+        // TODO add your handling code here:
+        if(txtLocality.getSelectedItem().equals("Roxbury")){
+            txtHospital.removeAllItems();
+            //txtHospital.addItem(null);
+            txtHospital.addItem("Boston Medical Center");
+            txtHospital.addItem("Brigham and Women's Hospital");
+            txtHospital.addItem("Massachusetts General Hospital");
+
+        }
+
+        else{
+            if(txtLocality.getSelectedItem().equals("Bolyston Street")){
+                txtHospital.removeAllItems();
+                //txtHospital.addItem(null);
+                txtHospital.addItem("Lemuel Shattuck Hospital");
+                txtHospital.addItem("Bolyston Medical Center");
+                txtHospital.addItem("Amit Hospital");
+
+            }
+            else{
+                txtHospital.removeAllItems();
+                //txtHospital.addItem(null);
+                txtHospital.addItem("Westland Community Health Center");
+                txtHospital.addItem("Walter P. Reuther Hospital");
+                txtHospital.addItem("Boston Medical Center");
+
+            }
+        }
+    }//GEN-LAST:event_txtLocalityActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AgeJLabel;
@@ -246,14 +302,18 @@ public class enterdataPerson extends javax.swing.JPanel {
     private javax.swing.JButton backJButton;
     private javax.swing.JLabel cityjLabel;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel patientNameJLabel;
     private javax.swing.JTextField personAddressJTextField;
     private javax.swing.JTextField personAgeJTextField;
     private javax.swing.JTextField personCityJTextField;
     private javax.swing.JLabel personCommunityJTextField;
-    private javax.swing.JComboBox<String> personCommunityjComboBox;
     private javax.swing.JTextField personWeightJTextField;
     private javax.swing.JTextField pesonNameJTextField;
+    private javax.swing.JComboBox<String> txtDoctor;
+    private javax.swing.JComboBox<String> txtHospital;
+    private javax.swing.JComboBox<String> txtLocality;
     private javax.swing.JLabel weightjLabel;
     // End of variables declaration//GEN-END:variables
 }

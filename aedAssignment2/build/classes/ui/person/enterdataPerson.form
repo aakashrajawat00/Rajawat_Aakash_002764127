@@ -23,30 +23,46 @@
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace pref="123" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="backJButton" alignment="1" min="-2" pref="97" max="-2" attributes="0"/>
                   <Component id="AgeJLabel" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="patientNameJLabel" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="weightjLabel" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="addressjLabel" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="cityjLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="personCommunityJTextField" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jLabel3" alignment="1" max="32767" attributes="0"/>
+                      <Component id="jLabel2" alignment="1" max="32767" attributes="0"/>
+                      <Component id="personCommunityJTextField" alignment="1" max="32767" attributes="0"/>
+                  </Group>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="personAgeJTextField" alignment="0" max="32767" attributes="0"/>
-                          <Component id="pesonNameJTextField" alignment="0" max="32767" attributes="0"/>
-                          <Component id="personWeightJTextField" alignment="0" max="32767" attributes="0"/>
-                          <Component id="personAddressJTextField" alignment="0" max="32767" attributes="0"/>
-                          <Component id="personCityJTextField" alignment="0" max="32767" attributes="0"/>
-                          <Component id="personCommunityjComboBox" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
+                      <Component id="addPersonJButton" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="personCityJTextField" alignment="0" pref="167" max="32767" attributes="0"/>
+                              <Component id="pesonNameJTextField" max="32767" attributes="0"/>
+                              <Component id="personAgeJTextField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="personWeightJTextField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="personAddressJTextField" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="txtHospital" max="32767" attributes="0"/>
+                              <Component id="txtLocality" pref="173" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
-                      <Component id="addPersonJButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Component id="txtDoctor" min="-2" pref="178" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="159" max="-2" attributes="0"/>
@@ -84,16 +100,26 @@
                   <Component id="personCityJTextField" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="personCommunityJTextField" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="personCommunityjComboBox" alignment="0" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="personCommunityJTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtLocality" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="txtHospital" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="txtDoctor" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="backJButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="addPersonJButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="363" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="317" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -155,24 +181,6 @@
         <Property name="text" type="java.lang.String" value="Community:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="personCommunityjComboBox">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Roxbury"/>
-            <StringItem index="1" value="Fenway"/>
-            <StringItem index="2" value="Downtown"/>
-            <StringItem index="3" value="Kenmore"/>
-          </StringArray>
-        </Property>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="personCommunityjComboBoxActionPerformed"/>
-      </Events>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
-    </Component>
     <Component class="javax.swing.JButton" name="backJButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Back"/>
@@ -188,6 +196,58 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addPersonJButtonActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="txtLocality">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="3">
+            <StringItem index="0" value="Roxbury"/>
+            <StringItem index="1" value="Bolyston Street"/>
+            <StringItem index="2" value="Westland"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtLocalityActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="txtHospital">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="0"/>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="txtDoctor">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="4">
+            <StringItem index="0" value="Dentist"/>
+            <StringItem index="1" value="Neurologists"/>
+            <StringItem index="2" value="Pediatricians"/>
+            <StringItem index="3" value="Gynecologists"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel2"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel3"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

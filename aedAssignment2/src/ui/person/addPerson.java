@@ -18,6 +18,7 @@ import ui.mainFrame;
  *
  * @author aakashrajawat
  */
+
 public class addPerson extends javax.swing.JPanel {
 
     /**
@@ -142,23 +143,19 @@ public class addPerson extends javax.swing.JPanel {
             .addComponent(jScrollPane1)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnSearch)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnBack)
-                        .addGap(31, 31, 31)
-                        .addComponent(btnCreate)))
+                .addComponent(btnBack)
+                .addGap(31, 31, 31)
+                .addComponent(btnCreate)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnView)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 80, Short.MAX_VALUE)
-                        .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(61, 61, 61)
-                        .addComponent(btnRefresh)
-                        .addGap(38, 38, 38))))
+                .addComponent(btnView)
+                .addGap(43, 43, 43)
+                .addComponent(btnRefresh)
+                .addGap(0, 144, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnSearch))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnBack, btnCreate, btnRefresh, btnSearch, btnView});
@@ -173,13 +170,13 @@ public class addPerson extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBack)
                     .addComponent(btnCreate)
-                    .addComponent(btnView))
-                .addGap(66, 66, 66)
+                    .addComponent(btnView)
+                    .addComponent(btnRefresh))
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSearch)
-                    .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRefresh))
-                .addGap(0, 330, Short.MAX_VALUE))
+                    .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 370, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnBack, btnCreate, btnRefresh, btnSearch, btnView});
