@@ -19,7 +19,35 @@ public class Person {
     private String address;
     private String city;
     private boolean hasVitalSigns;
+    private String userType;
+    private String hospital;
 
+    public String getHospital() {
+        return hospital;
+    }
+
+    public void setHospital(String hospital) {
+        this.hospital = hospital;
+    }
+    
+    
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
+    }
+    
+    
     public boolean hasVitalSigns() {
         return hasVitalSigns;
     }

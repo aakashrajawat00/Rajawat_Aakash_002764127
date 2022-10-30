@@ -30,7 +30,7 @@ import org.jfree.data.category.DefaultCategoryDataset;
 
 /**
  *
- * @author saket
+ * @author aakashrajawat
  */
 public class ManageVitalSignsJPanel extends javax.swing.JPanel {
     

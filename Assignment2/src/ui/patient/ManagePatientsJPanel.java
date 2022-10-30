@@ -15,6 +15,7 @@ import javax.swing.InputVerifier;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import ui.MainJFrame;
 
 /**
  *
@@ -27,12 +28,15 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
      */
     private PersonDirectory personDirectory;
     private JPanel userProcessContainer;
+ 
     
     public ManagePatientsJPanel(JPanel userProcessContainer, PersonDirectory personDirectory) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.personDirectory= personDirectory;
+        
         ArrayList<Person> personList = personDirectory.getPersonHistory();
+        
         populatePatientsTable(personList);
         InputVerifier stringVerifier = new StringVerifier();
         searchBoxJTextField.setInputVerifier(stringVerifier);
@@ -48,10 +52,12 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
             return;
         }
         for (Person person : personList) {
-            Object[] row = new Object[4];
+            Object[] row = new Object[5];
             row[0] = person;
-            row[1]= person.getAge();
-            row[3] =person.getCommunity();
+            row[1] = person.getAge();
+            row[3] = person.getCommunity();
+            row[4] = person.getHospital();
+            
             if(person.getPatient()!=null)
             {
                 row[2] = person.getPatient().getPatientID();
@@ -92,17 +98,17 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
 
         viewPersonsJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Patient Name", "Age", "Patient ID", "Community"
+                "Patient Name", "Age", "Patient ID", "Community", "Hospital"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -114,6 +120,7 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
             viewPersonsJTable.getColumnModel().getColumn(0).setResizable(false);
             viewPersonsJTable.getColumnModel().getColumn(2).setResizable(false);
             viewPersonsJTable.getColumnModel().getColumn(3).setResizable(false);
+            viewPersonsJTable.getColumnModel().getColumn(4).setResizable(false);
         }
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -177,14 +184,13 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 497, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(createPatientJButton)
                             .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(viewPatientJButton, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                            .addComponent(viewPatientJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(refreshJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -193,8 +199,9 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(searchPatientJButton)
-                            .addComponent(deletePatientJButton))))
-                .addContainerGap(24, Short.MAX_VALUE))
+                            .addComponent(deletePatientJButton)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 551, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -281,6 +288,7 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
 
     private void deletePatientJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletePatientJButtonActionPerformed
         // TODO add your handling code here:
+        
         int selectedRow= viewPersonsJTable.getSelectedRow();
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(this, "Please select a row from table.",

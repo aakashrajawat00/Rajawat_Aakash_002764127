@@ -42,6 +42,7 @@ public class PatientManagerWorkAreaJPanel extends javax.swing.JPanel {
         manageVitalSignsJButton = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(0, 255, 204));
         setMinimumSize(new java.awt.Dimension(500, 700));
         setPreferredSize(new java.awt.Dimension(500, 700));
 
