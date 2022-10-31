@@ -2,11 +2,11 @@
 
 Created a java-swing based Health Management Portal for assignment (INFO-1500)
 The scope of the assignment is :
--For people to find hospitals in their community
--To perform CRUD operations on person, patient, community and their encounters
--For doctors to add encounter and change Vital Signs of the patients
--For the Community Admins to change information realated to the community
--For the System Admin to perform CRUD operations on all the other admins
+1. For people to find hospitals in their community
+2. To perform CRUD operations on person, patient, community and their encounters
+3. For doctors to add encounter and change Vital Signs of the patients
+4. For the Community Admins to change information realated to the community
+5. For the System Admin to perform CRUD operations on all the other admins
 
 <br>
 
