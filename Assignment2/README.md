@@ -11,7 +11,7 @@ The scope of the assignment is :
 <br>
 
 <img src="classDiagram.jpeg" width="1000" height="500"/><br><br>
-
+<img src="sequence Diagram.jpeg" width="1000" height="500"/><br><br>
 
 
 ## Required Tools
