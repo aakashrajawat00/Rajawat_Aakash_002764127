@@ -20,6 +20,7 @@ import ui.person.ManagePersonsJPanel;
  */
 public class MainJFrame extends javax.swing.JFrame {
     
+    
     /**
      * Creates new form MainJFrame
      */
@@ -36,6 +37,8 @@ public class MainJFrame extends javax.swing.JFrame {
         jLabel1.setVisible(false);
         btnEncounter.setVisible(false);
         btnDirectory.setVisible(false);
+        btnLogin.setEnabled(true);
+        btnLogout.setVisible(false);
     }
     
     /**
@@ -55,6 +58,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btnEncounter = new javax.swing.JButton();
         btnDirectory = new javax.swing.JButton();
+        btnLogout = new javax.swing.JButton();
         userProcessContainer = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         lblTitle = new javax.swing.JLabel();
@@ -64,14 +68,16 @@ public class MainJFrame extends javax.swing.JFrame {
         txtPassword = new javax.swing.JPasswordField();
         txtUsername = new javax.swing.JTextField();
         btnLogin = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(142, 211, 203));
         setMinimumSize(new java.awt.Dimension(700, 500));
 
         jSplitPane1.setMinimumSize(new java.awt.Dimension(700, 700));
         jSplitPane1.setPreferredSize(new java.awt.Dimension(700, 700));
 
-        leftJPanel.setBackground(new java.awt.Color(0, 255, 153));
+        leftJPanel.setBackground(new java.awt.Color(142, 211, 203));
         leftJPanel.setMinimumSize(new java.awt.Dimension(200, 700));
         leftJPanel.setPreferredSize(new java.awt.Dimension(200, 700));
 
@@ -113,6 +119,13 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        btnLogout.setText("Logout");
+        btnLogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogoutActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout leftJPanelLayout = new javax.swing.GroupLayout(leftJPanel);
         leftJPanel.setLayout(leftJPanelLayout);
         leftJPanelLayout.setHorizontalGroup(
@@ -124,13 +137,15 @@ public class MainJFrame extends javax.swing.JFrame {
             .addGroup(leftJPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnDirectory, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(managePersonsJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(patientManagerJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                    .addComponent(btnEncounter, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(btnDirectory, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
+                        .addGroup(leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(managePersonsJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(patientManagerJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addComponent(btnEncounter, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE))
+                    .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         leftJPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnDashboard, btnDirectory, btnEncounter});
@@ -142,15 +157,17 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(managePersonsJButton)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(patientManagerJButton)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnDashboard)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnEncounter)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnDirectory)
-                .addContainerGap(358, Short.MAX_VALUE))
+                .addGap(90, 90, 90)
+                .addComponent(btnLogout)
+                .addContainerGap(299, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(leftJPanel);
@@ -159,10 +176,14 @@ public class MainJFrame extends javax.swing.JFrame {
         userProcessContainer.setPreferredSize(new java.awt.Dimension(500, 700));
         userProcessContainer.setLayout(new java.awt.CardLayout());
 
-        jPanel1.setBackground(new java.awt.Color(51, 255, 204));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 153));
+        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lblTitle.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Login Screen");
+        jPanel1.add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(167, 60, 156, 50));
 
         userType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "System Admin", "Hospital Admin", "Community Admin", "Doctor", "Person Login" }));
         userType.addActionListener(new java.awt.event.ActionListener() {
@@ -170,10 +191,15 @@ public class MainJFrame extends javax.swing.JFrame {
                 userTypeActionPerformed(evt);
             }
         });
+        jPanel1.add(userType, new org.netbeans.lib.awtextra.AbsoluteConstraints(181, 139, -1, -1));
 
         lblUsername.setText("Username");
+        jPanel1.add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 217, -1, -1));
 
         lblPassword.setText("Password");
+        jPanel1.add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 274, 59, -1));
+        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 271, 123, -1));
+        jPanel1.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 214, 123, -1));
 
         btnLogin.setText("Login");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
@@ -181,54 +207,11 @@ public class MainJFrame extends javax.swing.JFrame {
                 btnLoginActionPerformed(evt);
             }
         });
+        jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(181, 312, -1, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(191, 191, 191)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnLogin)
-                            .addComponent(userType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(122, 122, 122)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblPassword)
-                            .addComponent(lblUsername))
-                        .addGap(59, 59, 59)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(121, Short.MAX_VALUE))
-        );
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {lblPassword, lblUsername});
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtPassword, txtUsername});
-
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(userType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblUsername)
-                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPassword)
-                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(btnLogin)
-                .addContainerGap(345, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon("/Users/hardiksodhani/Desktop/v870-tang-36.jpg")); // NOI18N
+        jLabel2.setPreferredSize(new java.awt.Dimension(300, 300));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -780, 2380, 2530));
 
         userProcessContainer.add(jPanel1, "card2");
 
@@ -292,12 +275,12 @@ public class MainJFrame extends javax.swing.JFrame {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
         
-        patientManagerJButton.setVisible(false);
-        btnDashboard.setVisible(false);
-        managePersonsJButton.setVisible(false);
-        jLabel1.setVisible(false);
-        btnEncounter.setVisible(false);
-        btnLogin.setEnabled(true);
+//        patientManagerJButton.setVisible(false);
+//        btnDashboard.setVisible(false);
+//        managePersonsJButton.setVisible(false);
+//        jLabel1.setVisible(false);
+//        btnEncounter.setVisible(false);
+//        btnLogin.setEnabled(true);
 
             
         if (userType.getSelectedItem().toString() == "Person Login") {
@@ -305,6 +288,7 @@ public class MainJFrame extends javax.swing.JFrame {
             txtUsername.setEnabled(false);
             jLabel1.setVisible(true);
             managePersonsJButton.setVisible(true);
+            btnLogout.setVisible(true);
             user = "Person";
         } 
             
@@ -318,6 +302,9 @@ public class MainJFrame extends javax.swing.JFrame {
                 jLabel1.setVisible(true);
                 patientManagerJButton.setVisible(true);
                 btnDashboard.setVisible(true);
+                btnEncounter.setVisible(true);
+                btnDirectory.setVisible(true);
+                btnLogout.setVisible(true);
                 user = "System";
             } else {
                 JOptionPane.showMessageDialog(this, "Incorrect credential");
@@ -329,10 +316,14 @@ public class MainJFrame extends javax.swing.JFrame {
             if (userType.getSelectedItem().toString() == "Hospital Admin") {
             if (txtUsername.getText().matches("hospadmin") && txtPassword.getText().matches("123")) {
                 JOptionPane.showMessageDialog(this, "Hospital Admin Login Successfull");
-                managePersonsJButton.setVisible(true);
+                managePersonsJButton.setVisible(false);
                 jLabel1.setVisible(true);
                 patientManagerJButton.setVisible(true);
                 btnDashboard.setVisible(false);
+                btnEncounter.setVisible(true);
+                btnDirectory.setVisible(true);
+                btnLogout.setVisible(true);
+                
                 user = "Hospital";
             } else {
                 JOptionPane.showMessageDialog(this, "Incorrect credential");
@@ -345,14 +336,15 @@ public class MainJFrame extends javax.swing.JFrame {
             if (userType.getSelectedItem().toString() == "Community Admin"){
              if (txtUsername.getText().matches("communityadmin") && txtPassword.getText().matches("123")) {
                 JOptionPane.showMessageDialog(this, "Community Admin login successfull");
-                patientManagerJButton.setVisible(false);
-                btnDashboard.setVisible(true);
-                managePersonsJButton.setVisible(false);
-                jLabel1.setVisible(false);
-                btnEncounter.setVisible(false);
-                
                 user = "Community";
-  
+                managePersonsJButton.setVisible(false);
+                jLabel1.setVisible(true);
+                btnDashboard.setVisible(true);
+                patientManagerJButton.setVisible(false);
+                patientManagerJButton.setEnabled(false);
+                btnEncounter.setVisible(false);
+                btnDirectory.setVisible(false);
+                btnLogout.setVisible(true);
 
                 VitalSignReportJPanel report = new VitalSignReportJPanel(userProcessContainer, personDirectory);
         userProcessContainer.add("report",report);
@@ -371,12 +363,13 @@ public class MainJFrame extends javax.swing.JFrame {
                  JOptionPane.showMessageDialog(this, "Doctor Admin login successfull");
                 //managePersonsJButton.setVisible(false);
                 user = "Doctor";
-                jLabel1.setVisible(true);
+                jLabel1.setVisible(false);
                 btnDashboard.setVisible(false);
                 patientManagerJButton.setVisible(false);
                 btnEncounter.setVisible(true);
-                patientManagerJButton.setEnabled(false);
+                patientManagerJButton.setEnabled(true);
                 btnDirectory.setVisible(true);
+                btnLogout.setVisible(true);
                  
              }  
              else {
@@ -400,6 +393,22 @@ public class MainJFrame extends javax.swing.JFrame {
         CardLayout layout=(CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnDirectoryActionPerformed
+
+    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.first(userProcessContainer);
+        
+        patientManagerJButton.setVisible(false);
+        btnDashboard.setVisible(false);
+        managePersonsJButton.setVisible(false);
+        jLabel1.setVisible(false);
+        btnEncounter.setVisible(false);
+        btnDirectory.setVisible(false);
+        btnLogin.setEnabled(true);
+        btnLogout.setVisible(false);
+    }//GEN-LAST:event_btnLogoutActionPerformed
     
     /**
      * @param args the command line arguments
@@ -441,7 +450,9 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnDirectory;
     private javax.swing.JButton btnEncounter;
     private javax.swing.JButton btnLogin;
+    private javax.swing.JButton btnLogout;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JLabel lblPassword;
@@ -455,4 +466,8 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel userProcessContainer;
     private javax.swing.JComboBox<String> userType;
     // End of variables declaration//GEN-END:variables
+
+    public void setvisible(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

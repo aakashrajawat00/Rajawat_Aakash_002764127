@@ -10,35 +10,6 @@ package model;
  */
 public class doctor {
     
-    private String doctorName;
-    private int age;
-    private String special;
-    
-    public String getDoctorName() {
-        return doctorName;
-    }
-
-    public void setDoctorName(String doctorName) {
-        this.doctorName = doctorName;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getSpecial() {
-        return special;
-    }
-
-    public void setSpecial(String special) {
-        this.special = special;
-    }
-    
-    
     
     
 }
